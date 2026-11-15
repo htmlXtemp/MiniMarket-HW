@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { ThemePage } from './pages/ThemePage';
+import { UiKitPage } from './pages/UiKitPage';
 
 type TabId = 'theme' | 'kit' | 'catalog';
 
@@ -83,7 +84,8 @@ export function App() {
       </Tabs>
       <Content>
         {tab === 'theme' && <ThemePage />}
-        {tab !== 'theme' && <Placeholder>Раздел появится на следующем этапе.</Placeholder>}
+        {tab === 'kit' && <UiKitPage />}
+        {tab === 'catalog' && <Placeholder>Раздел появится на следующем этапе.</Placeholder>}
       </Content>
     </Page>
   );
