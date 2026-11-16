@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { CatalogPage } from './pages/CatalogPage';
 import { ThemePage } from './pages/ThemePage';
 import { UiKitPage } from './pages/UiKitPage';
 
@@ -12,7 +13,7 @@ const tabs: { id: TabId; label: string }[] = [
 ];
 
 const Page = styled.div`
-  max-width: 880px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: ${({ theme }) => theme.space(6)};
 `;
@@ -55,13 +56,6 @@ const Content = styled.div`
   margin-top: ${({ theme }) => theme.space(5)};
 `;
 
-const Placeholder = styled.div`
-  padding: ${({ theme }) => theme.space(6)};
-  border: 1px dashed ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radius};
-  color: ${({ theme }) => theme.colors.muted};
-`;
-
 export function App() {
   const [tab, setTab] = useState<TabId>('theme');
 
@@ -85,7 +79,7 @@ export function App() {
       <Content>
         {tab === 'theme' && <ThemePage />}
         {tab === 'kit' && <UiKitPage />}
-        {tab === 'catalog' && <Placeholder>Раздел появится на следующем этапе.</Placeholder>}
+        {tab === 'catalog' && <CatalogPage />}
       </Content>
     </Page>
   );
