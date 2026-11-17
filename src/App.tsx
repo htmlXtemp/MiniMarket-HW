@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { CatalogPage } from './pages/CatalogPage';
+import { TestPage } from './pages/TestPage';
 import { ThemePage } from './pages/ThemePage';
 import { UiKitPage } from './pages/UiKitPage';
 
-type TabId = 'theme' | 'kit' | 'catalog';
+type TabId = 'theme' | 'kit' | 'catalog' | 'test';
 
 const tabs: { id: TabId; label: string }[] = [
   { id: 'theme', label: 'Тема' },
   { id: 'kit', label: 'UI-кит' },
   { id: 'catalog', label: 'Каталог' },
+  { id: 'test', label: 'Тест' },
 ];
 
 const Page = styled.div`
@@ -80,6 +82,7 @@ export function App() {
         {tab === 'theme' && <ThemePage />}
         {tab === 'kit' && <UiKitPage />}
         {tab === 'catalog' && <CatalogPage />}
+        {tab === 'test' && <TestPage />}
       </Content>
     </Page>
   );
